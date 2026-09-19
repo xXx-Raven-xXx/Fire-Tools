@@ -24,7 +24,7 @@ if name == "nt":
 run(["adb", "start-server"], check=True, stderr=PIPE)
 
 # Get Device Name & Fire OS Version from identify Script, then Print Fire Tools Version, Platform, Device Name, and Software Version
-device = check_output(shlex.split(f"{default_path}identify{extension}"), universal_newlines=True).splitlines()
+device = check_output(shlex.split(f"\"{default_path}identify{extension}\""), universal_newlines=True).splitlines()
 print(f"Fire Tools Version: {version}\nPlatform: {platform}\nDevice: {device[0]}\nSoftware: {device[1]}\n")
 
 # Window Config
